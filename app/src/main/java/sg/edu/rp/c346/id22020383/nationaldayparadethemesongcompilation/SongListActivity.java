@@ -37,8 +37,10 @@ public class SongListActivity extends AppCompatActivity {
 
         ArrayList<Song> songs = dbHelper.getAllSongs();
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, songs);
+        adapter = new CustomSongAdapter(this, songs);
         listView.setAdapter(adapter);
+
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
